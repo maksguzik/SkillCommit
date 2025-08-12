@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { auth } from '../config/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -21,22 +23,22 @@ const SignIn = () => {
       <h2>Sign In</h2>
       <form onSubmit={handleSignIn}>
         <div>
-          <label htmlFor="email">Email</label>
-          <input
+          <TextField
+            id="outlined-basic" label="Email" variant="standard"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
-          <input
+          <TextField
+            id="outlined-basic" label="Password" variant="standard"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Sign In</button>
+        <Button variant="contained" type="submit">Sign In</Button>
       </form>
     </div>
   );

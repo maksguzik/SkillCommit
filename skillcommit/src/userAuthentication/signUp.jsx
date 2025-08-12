@@ -1,6 +1,8 @@
 import { useState } from 'react';
-    import { auth } from '../config/firebase';
-    import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../config/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
     const SignUp = () => {
       const [name, setName] = useState('');
@@ -20,51 +22,54 @@ import { useState } from 'react';
 
       return (
         <div>
-          <h2>Register your Account</h2>
+          <h2>Sign Up</h2>
           <form onSubmit={handleCreateUser}>
             <div>
-              <label>Name</label>
-              <input
+              {/* <label>Name</label> */}
+              <TextField
+                id="outlined-basic" label="Name" variant="standard"
                 type='text'
-                id='name'
                 name='name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div>
-              <label htmlFor='email'>Email</label>
-              <input
+              {/* <label htmlFor='email'>Email</label> */}
+              <TextField
+                id="outlined-basic" label="Email" variant="standard"
                 type='email'
-                id='email'
                 name='email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
-              <label htmlFor='password'>Password</label>
-              <input
+              {/* <label htmlFor='password'>Password</label> */}
+              <TextField
+                id="outlined-basic" label="Password" variant="standard"
                 type='password'
-                id='password'
+                // id='password'
                 name='password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div>
-              <label htmlFor='confirmPassword'>
+              {/* <label htmlFor='confirmPassword'>
                 Confirm Password
-              </label>
-              <input
+              </label> */}
+              <TextField
+                id="outlined-basic" label="Confirm Password" variant="standard"
                 type='password'
-                id='confirmPassword'
+                // id='confirmPassword'
                 name='confirmPassword'
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
-            <button type='submit'>Register</button>
+            <Button variant="contained" type="submit">Register</Button>
+            {/* <button type='submit'>Register</button> */}
           </form>
         </div>
       );
