@@ -1,13 +1,15 @@
+import { Navigate, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import SignIn from './userAuthentication/signIn';
-import SignUp from './userAuthentication/signUp';
+import LoginPage from './userAuthentication/LoginPage';
+
 function App() {
   return (
-    <div className="App">
-      <SignIn />
-      <SignUp />
-      
-    </div>
+    <Router>
+      <Routes>
+        <Route index element={<Navigate to="/login" replace />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
   );
 }
 
