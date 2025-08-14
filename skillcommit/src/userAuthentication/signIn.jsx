@@ -3,6 +3,7 @@ import { auth } from '../config/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import './LoginPageStyle.css';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -19,7 +20,7 @@ const SignIn = () => {
   };
 
   return (
-    <div>
+    <>
       <h2>Sign In</h2>
       <form onSubmit={handleSignIn}>
         <div>
@@ -40,7 +41,7 @@ const SignIn = () => {
         </div>
         <Button variant="contained" type="submit">Sign In</Button>
       </form>
-    </div>
+    </>
   );
 };
 

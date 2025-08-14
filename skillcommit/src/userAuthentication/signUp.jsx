@@ -3,6 +3,7 @@ import { auth } from '../config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import './LoginPageStyle.css';
 
     const SignUp = () => {
       const [name, setName] = useState('');
@@ -21,7 +22,7 @@ import Button from '@mui/material/Button';
       };
 
       return (
-        <div>
+        <>
           <h2>Sign Up</h2>
           <form onSubmit={handleCreateUser}>
             <div>
@@ -71,7 +72,7 @@ import Button from '@mui/material/Button';
             <Button variant="contained" type="submit">Register</Button>
             {/* <button type='submit'>Register</button> */}
           </form>
-        </div>
+        </>
       );
     };
 
